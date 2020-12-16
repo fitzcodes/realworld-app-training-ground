@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { TagList } from './TagList';
 
 const possibleRequestStates = {
     IDLE: 'idle',
@@ -51,7 +52,6 @@ export function HomePage() {
 
 
         {requestState === possibleRequestStates.PENDING && <span>Loading ...</span>}
-
        {requestState === possibleRequestStates.FAILURE &&  ( <span>Sorry, your articles could not be loaded at this time</span>)}
        {requestState === possibleRequestStates.SUCCESS && (
         articles.map((article) => {
@@ -82,18 +82,9 @@ export function HomePage() {
 
       <div className="col-md-3">
         <div className="sidebar">
-          <p>Popular Tags</p>
+          <TagList />
 
-          <div className="tag-list">
-            <a href="" className="tag-pill tag-default">programming</a>
-            <a href="" className="tag-pill tag-default">javascript</a>
-            <a href="" className="tag-pill tag-default">emberjs</a>
-            <a href="" className="tag-pill tag-default">angularjs</a>
-            <a href="" className="tag-pill tag-default">react</a>
-            <a href="" className="tag-pill tag-default">mean</a>
-            <a href="" className="tag-pill tag-default">node</a>
-            <a href="" className="tag-pill tag-default">rails</a>
-          </div>
+          
         </div>
       </div>
     </div>
