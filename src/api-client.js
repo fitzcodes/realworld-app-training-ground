@@ -3,8 +3,8 @@ import axios from "axios";
 const jwt = window.localStorage.getItem("jwt");
 
 const client = axios.create({
-  // baseURL: "https://conduit.productionready.io/api",
-  baseURL: "http://localhost:5100/api",
+  baseURL: "https://conduit.productionready.io/api",
+  // baseURL: "http://localhost:5100/api",
   headers: jwt
     ? {
         Authorization: "Token " + jwt,
